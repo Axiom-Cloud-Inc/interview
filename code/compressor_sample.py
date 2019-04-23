@@ -1,8 +1,5 @@
 def isentropic_efficiency(**kwargs):
     """
-    Given 3 of the 4 variables in the isentropic efficiency equation for a
-    compressor, solve for the value of the missing one.
-
     :param float efficiency: Compressor isentropic efficiency, between 0 and 1.
     :param float inlet_enthalpy: Enthalpy of inlet gas.
     :param float outlet_enthalpy_real: Enthalpy of outlet gas.
