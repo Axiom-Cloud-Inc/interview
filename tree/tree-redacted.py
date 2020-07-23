@@ -105,7 +105,7 @@ tree.update(payload)
 assert tree.get('rack1.sg1').value == 10
 assert tree.get('rack1.sg1.cmp1').value == 5
 assert tree.get('rack2.sg1.ckt1.case1').value == 20
-assert tree.get('rack1.sg1.cmp2').value == 
+assert tree.get('rack1.sg1.cmp2').value == None
 try:
 	tree.get('rack2.sg1.ckt1.case5')
 	assert False
