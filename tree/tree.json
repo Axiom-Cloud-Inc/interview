@@ -1,0 +1,32 @@
+{
+  "site": {
+    "rack1": {
+      "sg1": {
+        "cmp1": null,
+        "cmp2": null,
+        "ckt1": {
+          "case1": null,
+          "case2": null
+        },
+        "ckt2": {
+          "case1": null
+        }
+      },
+      "sg2": {
+        "cmp1": null,
+        "ckt1": null
+      }
+    },
+    "rack2": {
+      "sg1": {
+        "cmp1": null,
+        "cmp2": null,
+        "cmp3": null,
+        "ckt1": {
+          "case1": null
+        }
+      }
+    },
+    "cnd1": null
+  }
+}
