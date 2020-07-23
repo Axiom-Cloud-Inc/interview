@@ -1,0 +1,21 @@
+site:
+    rack1:
+        sg1:
+            cmp1: ~
+            cmp2: ~
+            ckt1:
+                case1: ~
+                case2: ~
+            ckt2:
+                case1: ~
+        sg2:
+            cmp1: ~
+            ckt1: ~
+    rack2:
+        sg1:
+            cmp1: ~
+            cmp2: ~
+            cmp3: ~
+            ckt1:
+                case1: ~
+    cnd1: ~
