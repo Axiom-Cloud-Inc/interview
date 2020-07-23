@@ -6,7 +6,7 @@ class Node:
     def __init__(self, name):
         self.name = name
         self._parent = None
-        self._children = set()
+        self._children = NotImplemented  # TODO: Choose iterable data structure
         self.value = None
 
     def __repr__(self):
