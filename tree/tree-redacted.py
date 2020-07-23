@@ -36,32 +36,6 @@ class Node:
         """
         raise NotImplementedError
 
-    def add_child(self, node):
-        """
-        Add a child node
-
-        :param Node node: Child to add
-        """
-        raise NotImplementedError
-
-    def get(self, path, sep='.'):
-        """
-        Get a node by ID
-
-        :param str path: Relative path to node
-        :param str sep: Separator char
-        :return Node: Node at path, or raise KeyError if not found
-        """
-        raise NotImplementedError
-
-    def update(self, payload):
-        """
-		Update node values in the tree by ID
-
-        :param dict payload: Dictionary tree ID / value pairs
-        """
-        raise NotImplementedError
-
     @classmethod
     def parse(cls, config):
         """
@@ -83,6 +57,31 @@ class Node:
         """
         raise NotImplementedError
 
+    def add_child(self, node):
+        """
+        Add a child node
+
+        :param Node node: Child to add
+        """
+        raise NotImplementedError
+
+    def get(self, path, sep='.'):
+        """
+        Get a node by ID
+
+        :param str path: Relative path to node
+        :param str sep: Separator char
+        :return Node: Node at path, or raise KeyError if not found
+        """
+        raise NotImplementedError
+
+    def update(self, payload):
+        """
+        Update node values in the tree by ID
+
+        :param dict payload: Dictionary tree ID / value pairs
+        """
+        raise NotImplementedError
 
 
 #########
