@@ -19,6 +19,14 @@ class Node:
         raise NotImplementedError
 
     @property
+    def parent(self):
+        return self._parent
+
+    @property
+    def children(self):
+        return self._children
+
+    @property
     def id(self, sep='.'):
         """
         Path of this Node from the root
@@ -98,7 +106,7 @@ tree.update(payload)
 assert tree.get('rack1.sg1').value == 10
 assert tree.get('rack1.sg1.cmp1').value == 5
 assert tree.get('rack2.sg1.ckt1.case1').value == 20
-assert tree.get('rack1.sg1.cmp2').value == None
+assert tree.get('rack1.sg1.cmp2').value == 
 try:
 	tree.get('rack2.sg1.ckt1.case5')
 	assert False
