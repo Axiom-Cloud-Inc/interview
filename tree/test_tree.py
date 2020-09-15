@@ -3,8 +3,27 @@ import unittest
 from tree import Node
 
 
+class TestNode(unittest.TestCase):
+
+    def setUp(self) -> None:
+        self.node1 = Node('node1')
+        self.node2 = Node('node2')
+        self.node1.add_child(self.node2)
+
+    def test_add_child(self):
+        self.assertEqual(self.node2.parent, self.node1)
+        self.assertIn(self.node2, self.node1.children)
+
+    def test_id(self):
+        self.assertEqual(self.node1.id, 'node1')
+        self.assertEqual(self.node2.id, 'node1.node2')
+
+    def test_get(self):
+        node2 = self.node1.get('node2')
+        self.assertEqual(self.node2, node2)
+
 class TestTree(unittest.TestCase):
-    def setup(self):
+    def setUp(self) -> None:
         self.tree = Node.load('tree.json')
 
     def test_tree_loads_from_config(self):

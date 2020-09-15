@@ -43,6 +43,14 @@ class Node:
         """
         raise NotImplementedError
 
+    def add_child(self, node):
+        """
+        Add a child node
+
+        :param Node node: Child to add
+        """
+        raise NotImplementedError
+
     @classmethod
     def load(cls, file):
         """
@@ -51,14 +59,6 @@ class Node:
 
         :param str file: JSON tree file path
         :return Node: Root Node of tree created from file
-        """
-        raise NotImplementedError
-
-    def add_child(self, node):
-        """
-        Add a child node
-
-        :param Node node: Child to add
         """
         raise NotImplementedError
 
