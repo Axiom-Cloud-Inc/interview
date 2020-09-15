@@ -1,6 +1,3 @@
-import json
-
-
 class Node:
 
     def __init__(self, name):
@@ -46,6 +43,14 @@ class Node:
         """
         raise NotImplementedError
 
+    def add_child(self, node):
+        """
+        Add a child node
+
+        :param Node node: Child to add
+        """
+        raise NotImplementedError
+
     @classmethod
     def load(cls, file):
         """
@@ -54,14 +59,6 @@ class Node:
 
         :param str file: JSON tree file path
         :return Node: Root Node of tree created from file
-        """
-        raise NotImplementedError
-
-    def add_child(self, node):
-        """
-        Add a child node
-
-        :param Node node: Child to add
         """
         raise NotImplementedError
 
@@ -82,34 +79,3 @@ class Node:
         :param dict payload: Dictionary tree ID / value pairs
         """
         raise NotImplementedError
-
-
-#########
-# TESTS #
-#########
-
-tree = Node.load('tree.json')
-
-assert len(tree) == 21
-
-payload = {
-    'rack1.sg1': 10,
-    'rack1.sg1.cmp1': 5,
-    'rack1.sg1.ckt1.case2': 20,
-    'rack1.sg2.ckt1': 30,
-    'rack2.sg1.ckt1.case1': 20, 
-    'rack2.sg1.ckt1.case5': 20,  # Does not exist
-}
-tree.update(payload)
-
-assert tree.get('rack1.sg1').value == 10
-assert tree.get('rack1.sg1.cmp1').value == 5
-assert tree.get('rack2.sg1.ckt1.case1').value == 20
-assert tree.get('rack1.sg1.cmp2').value == None
-try:
-	tree.get('rack2.sg1.ckt1.case5')
-	assert False
-except KeyError:
-	assert True
-
-
